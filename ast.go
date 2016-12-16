@@ -8,8 +8,6 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
-
-	"github.com/jasonmoo/sqlparser/sqltypes"
 )
 
 // Instructions for creating new types: If a type
@@ -619,15 +617,17 @@ func (*CaseExpr) IValExpr()   {}
 type StrVal []byte
 
 func (node StrVal) Format(buf *TrackedBuffer) {
-	s := sqltypes.MakeString([]byte(node))
-	s.EncodeSql(buf)
+	buf.WriteByte('?')
+	// s := sqltypes.MakeString([]byte(node))
+	// s.EncodeSql(buf)
 }
 
 // NumVal represents a number.
 type NumVal []byte
 
 func (node NumVal) Format(buf *TrackedBuffer) {
-	buf.Myprintf("%s", []byte(node))
+	buf.WriteByte('?')
+	// buf.Myprintf("%s", []byte(node))
 }
 
 // ValArg represents a named bind var argument.
