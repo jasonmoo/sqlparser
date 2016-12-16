@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/zhenjl/sqlparser/hack"
+	"github.com/jasonmoo/sqlparser/hack"
 )
 
 var (

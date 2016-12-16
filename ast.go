@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/zhenjl/sqlparser/sqltypes"
+	"github.com/jasonmoo/sqlparser/sqltypes"
 )
 
 // Instructions for creating new types: If a type
